@@ -9,18 +9,16 @@ const literacyIssues = [
   { title:'Directive Verbs', slug:'directive-verbs', type:'disciplinary', x:825, y:490 },
   { title:'Exam Literacy', slug:'exam-literacy', type:'disciplinary', x:760, y:548 },
 
-  { title:'Writing Speed', slug:'writing-speed', type:'foundational', x:205, y:786 },
-  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:315, y:828 },
-  { title:'Syntax', slug:'syntax', type:'foundational', x:415, y:785 },
-  { title:'Encoding', slug:'encoding', type:'foundational', x:500, y:846 },
-  { title:'Grammar', slug:'grammar', type:'foundational', x:555, y:770 },
-  { title:'Spelling', slug:'spelling', type:'foundational', x:620, y:858 },
-  { title:'Punctuation', slug:'punctuation', type:'foundational', x:685, y:770 },
-  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:765, y:842 },
-  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:860, y:785 },
-  { title:'Word Classes', slug:'word-classes', type:'foundational', x:945, y:842 },
-  { title:'Comprehension', slug:'comprehension', type:'foundational', x:1030, y:790 },
-  { title:'Writing Legibility', slug:'writing-legibility', type:'foundational', x:975, y:715 }
+  { title:'Handwriting', slug:'handwriting', type:'foundational', x:175, y:770 },
+  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:395, y:770 },
+  { title:'Encoding', slug:'encoding', type:'foundational', x:610, y:770 },
+  { title:'Grammar', slug:'grammar', type:'foundational', x:820, y:770 },
+  { title:'Punctuation', slug:'punctuation', type:'foundational', x:1025, y:770 },
+  { title:'Spelling', slug:'spelling', type:'foundational', x:215, y:835 },
+  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:455, y:835 },
+  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:690, y:835 },
+  { title:'Word Classes', slug:'word-classes', type:'foundational', x:900, y:835 },
+  { title:'Comprehension', slug:'comprehension', type:'foundational', x:1080, y:835 }
 ];
 
 const issueContent = {
