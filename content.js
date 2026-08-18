@@ -1,24 +1,24 @@
 const literacyIssues = [
-  { title:'Subject-Specific Texts', slug:'subject-specific-texts', type:'disciplinary', x:330, y:292 },
-  { title:'Text Scaffolds', slug:'text-scaffolds', type:'disciplinary', x:345, y:372 },
-  { title:'Self Feedback', slug:'self-feedback', type:'disciplinary', x:390, y:455 },
-  { title:'Teacher Feedback', slug:'teacher-feedback', type:'disciplinary', x:455, y:525 },
-  { title:'Academic Register', slug:'academic-register', type:'disciplinary', x:754, y:278 },
-  { title:'Sentence Applications', slug:'sentence-applications', type:'disciplinary', x:820, y:336 },
-  { title:'Tier 2 & 3 Vocabulary', slug:'tier-2-3-vocabulary', type:'disciplinary', x:850, y:410 },
-  { title:'Directive Verbs', slug:'directive-verbs', type:'disciplinary', x:825, y:490 },
-  { title:'Exam Literacy', slug:'exam-literacy', type:'disciplinary', x:760, y:548 },
+  { title:'Subject-Specific Texts', slug:'subject-specific-texts', type:'disciplinary', x:340, y:218 },
+  { title:'Text Scaffolds', slug:'text-scaffolds', type:'disciplinary', x:310, y:335 },
+  { title:'Self Feedback', slug:'self-feedback', type:'disciplinary', x:405, y:420 },
+  { title:'Teacher Feedback', slug:'teacher-feedback', type:'disciplinary', x:475, y:492 },
+  { title:'Academic Register', slug:'academic-register', type:'disciplinary', x:700, y:205 },
+  { title:'Sentence Applications', slug:'sentence-applications', type:'disciplinary', x:785, y:280 },
+  { title:'Tier 2 & 3 Vocabulary', slug:'tier-2-3-vocabulary', type:'disciplinary', x:825, y:370 },
+  { title:'Directive Verbs', slug:'directive-verbs', type:'disciplinary', x:790, y:455 },
+  { title:'Exam Literacy', slug:'exam-literacy', type:'disciplinary', x:705, y:520 },
 
-  { title:'Handwriting', slug:'handwriting', type:'foundational', x:175, y:770 },
-  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:395, y:770 },
-  { title:'Encoding', slug:'encoding', type:'foundational', x:610, y:770 },
-  { title:'Grammar', slug:'grammar', type:'foundational', x:820, y:770 },
-  { title:'Punctuation', slug:'punctuation', type:'foundational', x:1025, y:770 },
-  { title:'Spelling', slug:'spelling', type:'foundational', x:215, y:835 },
-  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:455, y:835 },
-  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:690, y:835 },
-  { title:'Word Classes', slug:'word-classes', type:'foundational', x:900, y:835 },
-  { title:'Comprehension', slug:'comprehension', type:'foundational', x:1080, y:835 }
+  { title:'Handwriting', slug:'handwriting', type:'foundational', x:170, y:750 },
+  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:375, y:755 },
+  { title:'Encoding', slug:'encoding', type:'foundational', x:575, y:760 },
+  { title:'Grammar', slug:'grammar', type:'foundational', x:780, y:755 },
+  { title:'Punctuation', slug:'punctuation', type:'foundational', x:1015, y:750 },
+  { title:'Spelling', slug:'spelling', type:'foundational', x:255, y:825 },
+  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:460, y:825 },
+  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:650, y:825 },
+  { title:'Word Classes', slug:'word-classes', type:'foundational', x:850, y:825 },
+  { title:'Comprehension', slug:'comprehension', type:'foundational', x:1040, y:825 }
 ];
 
 const issueContent = {
