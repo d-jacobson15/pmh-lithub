@@ -9,16 +9,16 @@ const literacyIssues = [
   { title:'Directive Verbs', slug:'directive-verbs', type:'disciplinary', x:770, y:445 },
   { title:'Exam Literacy', slug:'exam-literacy', type:'disciplinary', x:695, y:495 },
 
-  { title:'Handwriting', slug:'handwriting', type:'foundational', x:220, y:748 },
-  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:400, y:792 },
-  { title:'Encoding', slug:'encoding', type:'foundational', x:500, y:808 },
-  { title:'Grammar', slug:'grammar', type:'foundational', x:585, y:752 },
-  { title:'Punctuation', slug:'punctuation', type:'foundational', x:970, y:748 },
-  { title:'Spelling', slug:'spelling', type:'foundational', x:305, y:820 },
-  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:565, y:832 },
-  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:690, y:800 },
-  { title:'Word Classes', slug:'word-classes', type:'foundational', x:825, y:812 },
-  { title:'Comprehension', slug:'comprehension', type:'foundational', x:995, y:820 }
+  { title:'Handwriting', slug:'handwriting', type:'foundational', x:180, y:740 },
+  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:350, y:785 },
+  { title:'Encoding', slug:'encoding', type:'foundational', x:500, y:805 },
+  { title:'Grammar', slug:'grammar', type:'foundational', x:590, y:735 },
+  { title:'Punctuation', slug:'punctuation', type:'foundational', x:1010, y:740 },
+  { title:'Spelling', slug:'spelling', type:'foundational', x:245, y:835 },
+  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:520, y:850 },
+  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:700, y:785 },
+  { title:'Word Classes', slug:'word-classes', type:'foundational', x:845, y:835 },
+  { title:'Comprehension', slug:'comprehension', type:'foundational', x:1030, y:835 }
 ];
 
 const issueContent = {
