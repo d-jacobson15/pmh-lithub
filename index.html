@@ -64,27 +64,24 @@
             <path d="M627 474 C651 456 674 438 697 417 C724 392 746 363 765 334 C776 317 786 299 796 281 C789 303 780 324 770 344 C752 379 731 408 708 433 C684 458 660 477 637 492 C634 487 630 480 627 474 Z"/>
             <path d="M603 421 C587 399 572 374 559 347 C548 324 538 298 529 270 C541 292 554 314 568 335 C582 356 597 374 613 391 C611 401 608 411 603 421 Z"/>
             <path d="M615 398 C628 377 641 354 652 330 C663 305 672 281 681 256 C675 285 668 311 660 335 C650 363 638 389 624 411 C620 407 618 403 615 398 Z"/>
-          </g>
 
-          <!-- Cleaner, finer root system -->
-          <g class="root-system" fill="none" stroke="#73513b" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M566 690 C530 709 491 727 446 742 C402 757 355 769 302 777" stroke-width="13"/>
-            <path d="M580 703 C550 731 523 760 500 794 C484 816 470 838 458 857" stroke-width="10"/>
-            <path d="M597 708 C583 744 575 784 573 826" stroke-width="8"/>
-            <path d="M613 710 C613 751 615 796 618 853" stroke-width="10"/>
-            <path d="M630 707 C649 742 672 774 700 805 C718 826 738 844 758 859" stroke-width="10"/>
-            <path d="M645 696 C681 716 720 734 764 748 C812 764 861 775 914 782" stroke-width="13"/>
+            <!-- root flare -->
+            <path d="M566 690 C548 700 529 709 507 718 C534 714 556 716 577 724 C592 729 603 735 611 742 C620 735 632 730 648 725 C668 718 691 716 719 720 C696 710 678 701 661 690 C644 680 627 676 611 676 C595 676 580 681 566 690 Z"/>
 
-            <g opacity=".72" stroke-width="4.5">
-              <path d="M449 741 C420 734 393 728 365 719"/>
-              <path d="M405 756 C372 758 340 757 309 753"/>
-              <path d="M503 792 C483 783 466 775 449 765"/>
-              <path d="M573 823 C559 838 546 850 532 861"/>
-              <path d="M618 817 C631 835 642 849 654 861"/>
-              <path d="M699 805 C718 795 737 784 755 772"/>
-              <path d="M763 748 C794 741 825 731 855 719"/>
-              <path d="M818 766 C850 769 881 769 912 765"/>
-            </g>
+            <!-- primary roots, shaped like the branches -->
+            <path d="M581 706 C530 720 472 730 407 737 C340 744 265 749 170 750 C260 758 340 759 409 754 C474 749 534 740 592 722 Z"/>
+            <path d="M587 714 C548 735 507 757 468 781 C431 803 397 820 375 825 C404 819 438 809 476 794 C520 776 559 755 599 729 Z"/>
+            <path d="M599 720 C590 732 582 746 575 760 C584 758 592 758 600 760 C608 744 613 731 615 719 Z"/>
+            <path d="M614 720 C617 739 618 757 618 779 C627 770 637 767 647 768 C644 749 639 733 631 718 Z"/>
+            <path d="M628 717 C663 738 700 755 742 772 C785 790 820 807 850 825 C824 802 793 780 757 761 C715 738 676 722 641 708 Z"/>
+            <path d="M638 708 C694 731 757 743 823 748 C889 754 954 754 1015 750 C950 762 883 766 819 764 C752 762 692 751 632 726 Z"/>
+
+            <!-- second row roots -->
+            <path d="M560 729 C510 752 458 773 408 794 C354 816 305 828 255 825 C304 837 358 833 414 813 C470 793 521 769 571 742 Z"/>
+            <path d="M590 735 C557 754 525 775 495 797 C480 808 468 818 460 825 C477 817 495 809 513 801 C545 786 576 770 605 752 Z"/>
+            <path d="M615 738 C618 761 624 782 633 802 C639 813 645 821 650 825 C646 812 643 798 642 784 C640 766 638 751 633 736 Z"/>
+            <path d="M638 733 C673 752 708 772 744 793 C782 815 817 826 850 825 C815 815 784 800 756 781 C721 758 684 740 647 724 Z"/>
+            <path d="M652 722 C709 747 768 768 831 790 C904 815 975 827 1040 825 C976 813 913 795 850 770 C786 744 719 726 652 708 Z"/>
           </g>
 
           <g stroke="#604534" fill="none" stroke-linecap="round" opacity=".9">
@@ -121,8 +118,12 @@
       });
 
       const width = Math.max(124, issue.title.length * 8 + 24);
-      const yOffset = issue.type === 'foundational' ? -14 : -39;
-      const labelY = issue.y + yOffset;
+      const labelY = issue.y + 13;
+
+      const circle = document.createElementNS(NS, 'circle');
+      circle.setAttribute('cx', issue.x);
+      circle.setAttribute('cy', issue.y);
+      circle.setAttribute('r', '7');
 
       const labelBg = document.createElementNS(NS, 'rect');
       labelBg.setAttribute('x', issue.x - width / 2);
@@ -137,12 +138,7 @@
       text.setAttribute('text-anchor', 'middle');
       text.textContent = issue.title;
 
-      const circle = document.createElementNS(NS, 'circle');
-      circle.setAttribute('cx', issue.x - width / 2 - 14);
-      circle.setAttribute('cy', labelY + 14);
-      circle.setAttribute('r', '7');
-
-      g.append(labelBg, text, circle);
+      g.append(circle, labelBg, text);
       group.appendChild(g);
     });
   </script>
