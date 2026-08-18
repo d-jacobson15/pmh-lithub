@@ -20,11 +20,11 @@
       <div class="tree-stage">
         <svg class="tree-svg" viewBox="0 0 1200 900" role="img" aria-label="Interactive literacy tree">
           <defs>
-            <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#72533d"/>
-              <stop offset=".45" stop-color="#9c7656"/>
-              <stop offset=".7" stop-color="#7c5b43"/>
-              <stop offset="1" stop-color="#604432"/>
+            <linearGradient id="wood" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#5d4333"/>
+              <stop offset=".35" stop-color="#8a654d"/>
+              <stop offset=".62" stop-color="#9b7658"/>
+              <stop offset="1" stop-color="#543c2f"/>
             </linearGradient>
             <linearGradient id="leaf" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stop-color="#5b7d59"/>
@@ -58,22 +58,46 @@
             </g>
           </g>
 
-          <g class="branches" stroke="url(#trunk)" fill="none" stroke-linecap="round">
-            <path d="M597 705 C591 620 590 536 600 450 C604 394 606 336 608 280" stroke-width="46"/>
-            <path d="M600 494 C539 454 488 415 444 356" stroke-width="22"/>
-            <path d="M608 470 C665 429 711 389 758 326" stroke-width="21"/>
-            <path d="M602 410 C568 372 543 333 522 286" stroke-width="16"/>
-            <path d="M610 393 C640 349 660 313 678 267" stroke-width="15"/>
+          <!-- Natural, tapered woody structure -->
+          <g class="tree-wood" fill="url(#wood)">
+            <!-- trunk -->
+            <path d="M566 704 C574 649 575 592 576 536 C577 478 583 420 592 364 C598 326 601 291 603 258 C607 295 614 330 622 364 C632 416 641 473 646 535 C650 594 652 650 665 704 C644 691 625 684 611 684 C596 684 581 691 566 704 Z"/>
+
+            <!-- left primary limb -->
+            <path d="M590 493 C566 475 543 456 520 435 C493 410 468 382 447 352 C438 339 429 326 421 311 C433 323 444 335 455 346 C484 375 512 397 541 416 C561 430 581 441 602 449 C601 462 597 478 590 493 Z"/>
+
+            <!-- right primary limb -->
+            <path d="M627 474 C651 456 674 438 697 417 C724 392 746 363 765 334 C776 317 786 299 796 281 C789 303 780 324 770 344 C752 379 731 408 708 433 C684 458 660 477 637 492 C634 487 630 480 627 474 Z"/>
+
+            <!-- upper left limb -->
+            <path d="M603 421 C587 399 572 374 559 347 C548 324 538 298 529 270 C541 292 554 314 568 335 C582 356 597 374 613 391 C611 401 608 411 603 421 Z"/>
+
+            <!-- upper right limb -->
+            <path d="M615 398 C628 377 641 354 652 330 C663 305 672 281 681 256 C675 285 668 311 660 335 C650 363 638 389 624 411 C620 407 618 403 615 398 Z"/>
+
+            <!-- root flare -->
+            <path d="M566 690 C540 708 516 721 488 732 C523 725 548 724 574 729 C590 732 601 737 611 744 C621 736 635 730 651 727 C676 722 703 725 735 734 C707 721 683 708 661 689 C642 678 625 675 611 675 C596 675 581 679 566 690 Z"/>
+
+            <!-- left roots -->
+            <path d="M579 706 C542 718 505 730 466 742 C422 756 376 768 326 778 C299 784 274 789 250 794 C277 791 304 789 332 787 C383 783 430 778 474 771 C519 764 554 753 587 739 Z"/>
+            <path d="M591 716 C564 743 541 771 521 799 C505 821 491 842 477 862 C496 843 514 824 532 805 C556 779 579 756 602 738 Z"/>
+
+            <!-- central root -->
+            <path d="M606 727 C605 760 605 792 606 823 C607 841 609 858 611 876 C615 858 617 841 618 823 C620 792 619 760 617 727 Z"/>
+
+            <!-- right roots -->
+            <path d="M632 718 C655 742 677 768 699 796 C716 818 733 839 751 859 C738 839 725 818 713 797 C695 768 672 742 644 716 Z"/>
+            <path d="M644 739 C677 753 713 763 758 770 C801 778 848 783 899 787 C927 789 954 791 981 794 C957 789 932 784 905 778 C855 768 809 756 765 742 C726 730 689 718 652 706 Z"/>
           </g>
 
-          <g class="roots" fill="none" stroke="#876247" stroke-linecap="round">
-            <path d="M594 687 C520 717 422 754 291 783" stroke-width="18"/>
-            <path d="M606 693 C544 751 510 810 459 852" stroke-width="15"/>
-            <path d="M616 694 C618 761 620 812 618 866" stroke-width="17"/>
-            <path d="M624 692 C682 749 727 807 819 849" stroke-width="15"/>
-            <path d="M630 684 C744 716 851 755 965 790" stroke-width="18"/>
-            <path d="M575 705 C503 733 371 797 202 827" stroke-width="7" opacity=".65"/>
-            <path d="M648 704 C746 748 902 797 1036 819" stroke-width="7" opacity=".65"/>
+          <!-- finer secondary branches, kept subtle -->
+          <g stroke="#604534" fill="none" stroke-linecap="round" opacity=".9">
+            <path d="M465 365 C439 339 416 310 397 278" stroke-width="8"/>
+            <path d="M506 417 C479 401 452 381 427 358" stroke-width="7"/>
+            <path d="M718 410 C748 385 775 356 800 320" stroke-width="8"/>
+            <path d="M676 438 C704 420 729 398 751 374" stroke-width="7"/>
+            <path d="M557 343 C548 315 543 290 540 264" stroke-width="6"/>
+            <path d="M653 331 C664 306 672 282 678 260" stroke-width="6"/>
           </g>
 
           <g id="issueNodes"></g>
