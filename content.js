@@ -15,7 +15,7 @@ const literacyIssues = [
   { title:'Grammar', slug:'grammar', type:'foundational', x:590, y:735 },
   { title:'Punctuation', slug:'punctuation', type:'foundational', x:1010, y:740 },
   { title:'Spelling', slug:'spelling', type:'foundational', x:245, y:835 },
-  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:520, y:850 },
+  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:520, y:815 },
   { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:700, y:785 },
   { title:'Word Classes', slug:'word-classes', type:'foundational', x:845, y:835 },
   { title:'Comprehension', slug:'comprehension', type:'foundational', x:1030, y:835 }
