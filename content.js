@@ -1,22 +1,26 @@
 const literacyIssues = [
-  { title:'Subject-Specific Texts', slug:'subject-specific-texts', type:'disciplinary', x:360, y:300 },
-  { title:'Text Scaffolds', slug:'text-scaffolds', type:'disciplinary', x:350, y:385 },
-  { title:'Self Feedback', slug:'self-feedback', type:'disciplinary', x:380, y:470 },
-  { title:'Teacher Feedback', slug:'teacher-feedback', type:'disciplinary', x:425, y:545 },
-  { title:'Academic Register', slug:'academic-register', type:'disciplinary', x:770, y:285 },
-  { title:'Sentence Applications', slug:'sentence-applications', type:'disciplinary', x:825, y:350 },
-  { title:'Subject-Specific Vocabulary', slug:'subject-specific-vocabulary', type:'disciplinary', x:840, y:425 },
-  { title:'Directive Verbs', slug:'directive-verbs', type:'disciplinary', x:820, y:505 },
-  { title:'Exam Literacy', slug:'exam-literacy', type:'disciplinary', x:760, y:565 },
-  { title:'Writing Speed', slug:'writing-speed', type:'foundational', x:275, y:765 },
-  { title:'Syntax', slug:'syntax', type:'foundational', x:390, y:815 },
-  { title:'Encoding', slug:'encoding', type:'foundational', x:485, y:845 },
-  { title:'Grammar', slug:'grammar', type:'foundational', x:555, y:800 },
-  { title:'Spelling', slug:'spelling', type:'foundational', x:620, y:860 },
-  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:710, y:812 },
-  { title:'Word Classes', slug:'word-classes', type:'foundational', x:835, y:770 },
-  { title:'Comprehension', slug:'comprehension', type:'foundational', x:925, y:815 },
-  { title:'Writing Legibility', slug:'writing-legibility', type:'foundational', x:1010, y:760 }
+  { title:'Subject-Specific Texts', slug:'subject-specific-texts', type:'disciplinary', x:330, y:292 },
+  { title:'Text Scaffolds', slug:'text-scaffolds', type:'disciplinary', x:345, y:372 },
+  { title:'Self Feedback', slug:'self-feedback', type:'disciplinary', x:390, y:455 },
+  { title:'Teacher Feedback', slug:'teacher-feedback', type:'disciplinary', x:455, y:525 },
+  { title:'Academic Register', slug:'academic-register', type:'disciplinary', x:754, y:278 },
+  { title:'Sentence Applications', slug:'sentence-applications', type:'disciplinary', x:820, y:336 },
+  { title:'Tier 2 & 3 Vocabulary', slug:'tier-2-3-vocabulary', type:'disciplinary', x:850, y:410 },
+  { title:'Directive Verbs', slug:'directive-verbs', type:'disciplinary', x:825, y:490 },
+  { title:'Exam Literacy', slug:'exam-literacy', type:'disciplinary', x:760, y:548 },
+
+  { title:'Writing Speed', slug:'writing-speed', type:'foundational', x:205, y:786 },
+  { title:'Reading Fluency', slug:'reading-fluency', type:'foundational', x:315, y:828 },
+  { title:'Syntax', slug:'syntax', type:'foundational', x:415, y:785 },
+  { title:'Encoding', slug:'encoding', type:'foundational', x:500, y:846 },
+  { title:'Grammar', slug:'grammar', type:'foundational', x:555, y:770 },
+  { title:'Spelling', slug:'spelling', type:'foundational', x:620, y:858 },
+  { title:'Punctuation', slug:'punctuation', type:'foundational', x:685, y:770 },
+  { title:'Sentence Structures', slug:'sentence-structures', type:'foundational', x:765, y:842 },
+  { title:'Tier 1 Vocabulary', slug:'tier-1-vocabulary', type:'foundational', x:860, y:785 },
+  { title:'Word Classes', slug:'word-classes', type:'foundational', x:945, y:842 },
+  { title:'Comprehension', slug:'comprehension', type:'foundational', x:1030, y:790 },
+  { title:'Writing Legibility', slug:'writing-legibility', type:'foundational', x:975, y:715 }
 ];
 
 const issueContent = {
@@ -37,12 +41,12 @@ const issueContent = {
       { title:'Sentence Applications', slug:'sentence-applications', summary:'Practise disciplinary thinking through controlled sentence-level tasks before moving to extended responses.' }
     ]
   },
-  'subject-specific-vocabulary': {
-    title:'Subject-Specific Vocabulary', type:'Disciplinary Literacy',
-    intro:'Students need precise disciplinary vocabulary to comprehend texts, build knowledge and communicate sophisticated understanding.',
-    problem:'When key vocabulary is unfamiliar, partially understood or used imprecisely, students can struggle to access new content and to express the relationships between ideas in subject-appropriate language.',
-    indicators:['Students substitute vague everyday words for technical terms.','Key terms are copied without clear understanding.','Students struggle to infer meaning when specialist vocabulary appears in complex texts.'],
-    research:'Vocabulary growth is strongest when words are taught explicitly, encountered repeatedly and used meaningfully within disciplinary contexts.',
+  'tier-2-3-vocabulary': {
+    title:'Tier 2 & 3 Vocabulary', type:'Disciplinary Literacy',
+    intro:'Students need both high-utility academic vocabulary and precise disciplinary vocabulary to comprehend complex texts, build knowledge and communicate sophisticated understanding.',
+    problem:'When Tier 2 academic words or Tier 3 subject-specific terms are unfamiliar, partially understood or used imprecisely, students can struggle to access new content and express relationships between ideas in subject-appropriate language.',
+    indicators:['Students substitute vague everyday words for more precise academic or technical terms.','Key terms are copied without clear understanding.','Students struggle to infer meaning when specialised vocabulary appears in complex texts.'],
+    research:'Vocabulary growth is strongest when important words are taught explicitly, encountered repeatedly and used meaningfully within disciplinary contexts.',
     strategies:[
       {title:'Explicit Vocabulary Instruction',slug:'explicit-vocabulary-instruction',summary:'Teach selected terms directly, revisit them and require students to use them in context.'},
       {title:'Frayer Model',slug:'frayer-model',summary:'Develop depth of word knowledge through definitions, characteristics, examples and non-examples.'},
