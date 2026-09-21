@@ -46,9 +46,7 @@ const issueContent = {
     indicators:['Students substitute vague everyday words for more precise academic or technical terms.','Key terms are copied without clear understanding.','Students struggle to infer meaning when specialised vocabulary appears in complex texts.'],
     research:'Vocabulary growth is strongest when important words are taught explicitly, encountered repeatedly and used meaningfully within disciplinary contexts.',
     strategies:[
-      {title:'Explicit Vocabulary Instruction',slug:'explicit-vocabulary-instruction',summary:'Teach selected terms directly, revisit them and require students to use them in context.'},
-      {title:'Frayer Model',slug:'frayer-model',summary:'Develop depth of word knowledge through definitions, characteristics, examples and non-examples.'},
-      {title:'Morphology',slug:'morphology',summary:'Teach meaningful word parts so students can analyse and generate unfamiliar academic vocabulary.'}
+      {title:'Vocabulary Criteria',slug:'vocabulary-criteria',summary:'Require students to apply a small set of carefully selected Tier 2 and Tier 3 words in an academic response.'}
     ]
   },
   'comprehension': {
@@ -66,6 +64,45 @@ const issueContent = {
 };
 
 const strategyContent = {
+  'vocabulary-criteria': {
+    title:'Vocabulary Criteria',
+    overview:'We often ask students to apply class content by answering questions or constructing written responses. Vocabulary Criteria ensure students use appropriate subject-specific terminology while also developing the more sophisticated academic language needed to communicate their ideas clearly. The strategy is simple: when setting a question or written response, provide students with a short list of Tier 2 and Tier 3 words that they are expected to use accurately in their response.',
+    why:'When students repeatedly encounter and use key vocabulary across lessons, and are held accountable for applying it, vocabulary growth improves. Townsend, Brock and Morrison (2018) reported effect sizes of 0.38 for general academic vocabulary and 0.45 for discipline-specific science vocabulary. Students’ average use of general academic words increased from 5.64 to 7.00, while discipline-specific words increased from 0.52 to 1.22.',
+    steps:[
+      'Identify an academic task where students’ responses would be strengthened by using more precise vocabulary.',
+      'Consider what a full-mark response would sound like. Select 2–3 Tier 2 words that you would expect to see used accurately.',
+      'Repeat the process for Tier 3 vocabulary, selecting 2–3 key subject-specific terms.',
+      'Copy the Vocabulary Criteria template and add your selected words. When setting the task in Canvas, clearly state: “In your response, you must include the vocabulary specified in this criteria.”'
+    ],
+    video:'Teaching video coming soon.',
+    advice:[
+      {title:'Consistency',text:'Reuse the same high-value words across lessons and tasks so students retrieve and apply them repeatedly.'},
+      {title:'Do not overload',text:'Two to three Tier 2 words and two to three Tier 3 words per response is usually enough. Adjust this according to the mark value and complexity of the task.'},
+      {title:'Consider time',text:'If students are expected to use the words accurately, they need time to learn them. Explicitly teach their meanings before requiring them in a response.'},
+      {title:'Restrict AI where appropriate',text:'Students can easily ask generative AI to insert a word list into a response. Consider books-only application tasks, in-class writing or other checks that require students to demonstrate genuine understanding.'}
+    ],
+    across:[
+      'English Essay Draft',
+      'Business Studies Exit Ticket',
+      'Modern History Lightning Writing',
+      'Mathematics Practice HSC Question'
+    ],
+    impact:[
+      'Compare students’ use of the specified vocabulary before and after repeated use of Vocabulary Criteria.',
+      'Check whether students are using the words accurately rather than simply inserting them into sentences.',
+      'Track whether previously taught words reappear independently in later responses.',
+      'Sample student work across a class or faculty and look for growth in the precision and range of academic and subject-specific vocabulary.'
+    ],
+    resources:[
+      'Faculty Tier 2 and 3 Word Banks',
+      'ChatGPT prompt to identify Tier 2 and Tier 3 words from content',
+      'Canvas Pop-Up'
+    ],
+    reading:[
+      {title:'Townsend, Brock & Morrison (2018)',url:'https://www.tandfonline.com/doi/abs/10.1080/09500693.2017.1420267'}
+    ],
+    tip:'Keep the list small, teach the words explicitly first and reuse them often enough that students begin to retrieve them independently.'
+  },
   'question-deconstruction': {
     title:'Question Deconstruction',
     overview:'Question Deconstruction is a short routine that teaches students to identify what a task is asking them to think about and do before they begin writing.',
