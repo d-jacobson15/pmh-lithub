@@ -147,9 +147,9 @@
       g.setAttribute('tabindex', '0');
       g.setAttribute('role', 'link');
       g.setAttribute('aria-label', issue.title);
-      g.addEventListener('click', () => location.href = `issue.html?id=${issue.slug}`);
+      g.addEventListener('click', () => location.href = `issues/${issue.slug}.html`);
       g.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') location.href = `issue.html?id=${issue.slug}`;
+        if (e.key === 'Enter' || e.key === ' ') location.href = `issues/${issue.slug}.html`;
       });
 
       const width = Math.max(124, issue.title.length * 8 + 24);
