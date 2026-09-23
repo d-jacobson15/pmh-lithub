@@ -63,7 +63,10 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 .dialog-close:hover,.dialog-close:focus{background:var(--green-dark);color:#fff;outline:none}
 @media(max-width:900px){.evidence-grid{grid-template-columns:1fr}.subject-picker{grid-template-columns:1fr}}
 
-.sidebar-divider{height:1px;background:linear-gradient(90deg,transparent,#d9e1dc,transparent);margin:26px 0 22px}
-.sidebar-strategy-list{grid-template-columns:1fr;margin-top:12px}
-.sidebar-strategy-list .strategy-card{padding:18px}
-.sidebar-strategy-list .strategy-card h3{font-size:18px}
+.sidebar-divider{height:1px;background:linear-gradient(90deg,transparent,#d9e1dc,transparent);margin:30px 0 26px}
+.issue-side .sidebar-divider + .eyebrow{margin:0 0 10px}
+.issue-side .sidebar-strategy-list{display:flex;flex-direction:column;gap:12px;margin-top:16px;width:100%}
+.issue-side .sidebar-strategy-list .strategy-card{display:block;width:100%;max-width:none;padding:20px;margin:0}
+.issue-side .sidebar-strategy-list .strategy-card h3{font-size:18px;margin-bottom:8px}
+.issue-side .sidebar-strategy-list .strategy-card p{margin:0 0 14px}
+.issue-side .sidebar-strategy-list .strategy-card strong{display:inline-block}
