@@ -9,7 +9,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=10">
+  <link rel="stylesheet" href="../styles.css?v=15">
 </head>
 <body>
 
@@ -23,10 +23,17 @@
           <span class="brand-subtitle">Excellence · Growth · Innovation</span>
         </span>
       </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#tree">Literacy Tree</a>
-      </nav>
+      <div class="header-tools">
+        <div class="site-search">
+          <input class="site-search-input" type="search" placeholder="Search the Literacy Hub…" aria-label="Search the Literacy Hub" aria-expanded="false" autocomplete="off">
+          <span class="site-search-icon" aria-hidden="true">⌕</span>
+          <div class="site-search-results" hidden></div>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#tree">Literacy Tree</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -385,5 +392,7 @@
       if (outside) subjectDialog.close();
     });
   </script>
+  <script src="../search-index.js"></script>
+  <script src="../search.js" data-site-search></script>
 </body>
 </html>
