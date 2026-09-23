@@ -79,3 +79,6 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 .impact-list>li>strong{color:var(--green-dark)}
 .impact-list>li ul{margin:12px 0 0;padding-left:28px}
 .impact-list>li ul li{margin:8px 0 0;line-height:1.65;color:#52675f}
+
+.across-curriculum-list .strategy-card{display:flex;align-items:center;justify-content:center;text-align:center;min-height:120px;padding:24px}
+.across-curriculum-list .strategy-card h3{margin:0;font-size:18px;font-weight:500;line-height:1.35}
