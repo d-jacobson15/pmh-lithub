@@ -9,7 +9,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=6">
+  <link rel="stylesheet" href="../styles.css?v=7">
 </head>
 <body>
 
@@ -143,10 +143,130 @@
           </div>
         </section>
 
-        <h2>What does the research tell us?</h2>
-        <p>
-          Vocabulary growth is strongest when important words are taught explicitly, encountered repeatedly and used meaningfully within disciplinary contexts.
-        </p>
+        <section class="evidence-section" aria-labelledby="evidence-for-action-title">
+          <p class="eyebrow">Why this matters</p>
+          <h2 id="evidence-for-action-title">The Evidence for Action</h2>
+
+          <p>
+            A limited academic (Tier 2) and subject-specific (Tier 3) vocabulary is a
+            barrier between what a student knows and what they can demonstrate.
+            Students need vocabulary to:
+          </p>
+
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <span class="evidence-label">01</span>
+              <div>
+                <h3>Access Knowledge</h3>
+                <p>
+                  Students need to understand the specialised and technical vocabulary
+                  embedded across the secondary curriculum to access and master subject
+                  content <strong>(EEF, 2024)</strong>.
+                </p>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <span class="evidence-label">02</span>
+              <div>
+                <h3>Understand Texts &amp; Questions</h3>
+                <p>
+                  Reading and comprehending sources of information depends heavily on
+                  students understanding the vocabulary within them, with vocabulary
+                  knowledge accounting for 50–60% of the variance in reading
+                  comprehension <strong>(AERO, 2024; Stahl &amp; Nagy, 2006)</strong>.
+                </p>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <span class="evidence-label">03</span>
+              <div>
+                <h3>Communicate Knowledge</h3>
+                <p>
+                  Every subject has its own academic and disciplinary language. Students
+                  need this vocabulary to communicate their knowledge accurately and
+                  effectively within each subject <strong>(EEF, 2018)</strong>.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="hsc-evidence-panel">
+            <div>
+              <p class="eyebrow">HSC standards</p>
+              <h3>Vocabulary is embedded in high achievement</h3>
+              <p>
+                NESA’s performance band descriptors, which inform the development of
+                marking guidelines, associate higher achievement with the precise and
+                appropriate use of disciplinary language.
+              </p>
+            </div>
+
+            <p class="subject-picker-label">
+              Select a subject to view the relevant performance-band language:
+            </p>
+
+            <div class="subject-picker" aria-label="HSC subject vocabulary examples">
+              <button type="button" class="subject-button"
+                data-subject="Economics"
+                data-descriptor="Band 6 students use “extensive economic vocabulary”, while Band 5 refers to “precise economic vocabulary” and Band 2 to only “some appropriate terminology”.">
+                Economics
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Biology"
+                data-descriptor="Band 6 students use “correct and precise scientific terms”, compared with “basic scientific terms” at Band 3 and “limited scientific terms” at Band 2.">
+                Biology
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Business Studies"
+                data-descriptor="Band 6 students “clearly communicate using business terminology”, while Band 3 students use only “basic business terminology”.">
+                Business Studies
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Legal Studies"
+                data-descriptor="Band 6 students use “relevant legal concepts and terminology”, compared with “appropriate” terminology at Band 4 and “some legal terminology” at Band 2.">
+                Legal Studies
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Modern History"
+                data-descriptor="Band 6 students demonstrate a “sophisticated understanding and use of historical concepts and terms”, compared with “basic” use at Band 3 and “limited” use at Band 2.">
+                Modern History
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Studies of Religion"
+                data-descriptor="Band 6 students use “terminology appropriate to Studies of Religion”, while lower bands refer to “some” or “limited” terminology.">
+                Studies of Religion
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Mathematics Advanced"
+                data-descriptor="Band 6 students communicate effectively using “appropriate mathematical language, notation, diagrams and graphs”.">
+                Mathematics Advanced
+              </button>
+
+              <button type="button" class="subject-button"
+                data-subject="Mathematics Standard 2"
+                data-descriptor="Band 6 similarly requires “appropriate mathematical language, notation, diagrams and graphs”, compared with only “some mathematical language” at Band 2.">
+                Mathematics Standard 2
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <dialog class="subject-dialog" id="subjectDialog" aria-labelledby="subjectDialogTitle">
+          <div class="subject-dialog-inner">
+            <button type="button" class="dialog-close" aria-label="Close subject descriptor">×</button>
+            <p class="eyebrow">NESA performance band language</p>
+            <h2 id="subjectDialogTitle"></h2>
+            <p id="subjectDialogText"></p>
+          </div>
+        </dialog>
 
         <h2>High-impact teaching strategies</h2>
         <div class="strategy-list">
@@ -175,5 +295,32 @@
 
     <a class="back-link" href="../index.html#tree">← Back to the Literacy Tree</a>
   </main>
+  <script>
+    const subjectDialog = document.getElementById('subjectDialog');
+    const dialogTitle = document.getElementById('subjectDialogTitle');
+    const dialogText = document.getElementById('subjectDialogText');
+    const closeDialog = subjectDialog.querySelector('.dialog-close');
+
+    document.querySelectorAll('.subject-button').forEach(button => {
+      button.addEventListener('click', () => {
+        dialogTitle.textContent = button.dataset.subject;
+        dialogText.textContent = button.dataset.descriptor;
+        subjectDialog.showModal();
+      });
+    });
+
+    closeDialog.addEventListener('click', () => subjectDialog.close());
+
+    subjectDialog.addEventListener('click', event => {
+      const box = subjectDialog.getBoundingClientRect();
+      const outside =
+        event.clientX < box.left ||
+        event.clientX > box.right ||
+        event.clientY < box.top ||
+        event.clientY > box.bottom;
+
+      if (outside) subjectDialog.close();
+    });
+  </script>
 </body>
 </html>
