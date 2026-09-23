@@ -26,3 +26,16 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 .pyramid-tier-2{width:82%;background:linear-gradient(135deg,#eef5ef,#e5f0e9);border:2px solid var(--gold)}
 .pyramid-tier-3{width:64%;background:linear-gradient(135deg,#e5efe9,#dcebe3);border:2px solid var(--gold)}
 @media(max-width:700px){.pyramid-tier-2{width:90%}.pyramid-tier-3{width:78%}.pyramid-tier{padding:15px 12px}}
+
+.symptoms-section{margin:32px 0}
+.symptoms-heading{margin-bottom:18px}
+.symptoms-heading .eyebrow{margin-bottom:6px}
+.symptoms-heading h2{margin:0 0 8px}
+.symptoms-heading p:last-child{margin:0;max-width:760px}
+.symptom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.symptom-card{position:relative;display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;background:linear-gradient(145deg,#fbfaf5,#f3f6f3);border:1px solid #dce4df;border-radius:16px;padding:17px 18px;box-shadow:0 7px 20px rgba(31,58,47,.045)}
+.symptom-card:before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;border-radius:0 4px 4px 0;background:linear-gradient(var(--gold),#dfbf63)}
+.symptom-card p{margin:0!important;line-height:1.55!important;color:#435d54!important}
+.symptom-number{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--green-dark);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;box-shadow:0 4px 10px rgba(7,55,45,.16)}
+.symptom-card-wide{grid-column:1/-1}
+@media(max-width:700px){.symptom-grid{grid-template-columns:1fr}.symptom-card-wide{grid-column:auto}}
