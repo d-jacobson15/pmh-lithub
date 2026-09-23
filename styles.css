@@ -73,3 +73,10 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 
 .issue-side .sidebar-divider + .eyebrow + h2{font-size:clamp(20px,1.55vw,24px);white-space:nowrap;letter-spacing:-.02em}
 @media(max-width:460px){.issue-side .sidebar-divider + .eyebrow + h2{font-size:19px;white-space:normal}}
+
+.impact-list{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:16px}
+.impact-list>li{position:relative;background:linear-gradient(145deg,#fbfaf5,#f5f7f5);border:1px solid #dce4df;border-left:4px solid var(--gold);border-radius:16px;padding:18px 20px;line-height:1.7;color:#435d54;box-shadow:0 7px 20px rgba(31,58,47,.04)}
+.impact-list>li>strong{color:var(--green-dark);font-size:17px}
+.impact-list>li ul{margin:14px 0 0;padding:14px 0 0 22px;border-top:1px solid #e3e8e4}
+.impact-list>li ul li{line-height:1.65;color:#52675f}
+@media(max-width:700px){.impact-list>li{padding:16px 17px}}
