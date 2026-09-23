@@ -43,10 +43,10 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 .evidence-section{margin:34px 0}
 .evidence-section>h2{margin-top:4px}
 .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 24px}
-.evidence-card{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;background:linear-gradient(145deg,#fbfaf5,#f4f7f4);border:1px solid #dce4df;border-radius:17px;padding:18px;box-shadow:0 7px 20px rgba(31,58,47,.045)}
-.evidence-card h3{margin:2px 0 7px;color:var(--green-dark);font-size:17px}
+.evidence-card{display:block;background:linear-gradient(145deg,#fbfaf5,#f4f7f4);border:1px solid #dce4df;border-radius:17px;padding:20px;box-shadow:0 7px 20px rgba(31,58,47,.045)}
+.evidence-card h3{margin:0 0 8px;color:var(--green-dark);font-size:18px}
 .evidence-card p{margin:0!important;line-height:1.58!important}
-.evidence-label{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--green-dark);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em}
+.evidence-label{display:none}
 .hsc-evidence-panel{margin-top:24px;padding:22px;border-radius:18px;background:linear-gradient(145deg,#f8f4e7,#fffdf8);border:1px solid #e4d7ad;box-shadow:0 8px 24px rgba(31,58,47,.045)}
 .hsc-evidence-panel h3{margin:4px 0 8px;color:var(--green-dark);font-size:21px}
 .hsc-evidence-panel>div:first-child>p:last-child{margin-bottom:0}
