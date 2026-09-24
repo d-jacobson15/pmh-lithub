@@ -172,7 +172,7 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
   width:100%;
   display:flex;
   flex-direction:column;
-  padding:24px 28px 28px;
+  padding:20px 28px 26px;
   margin:0;
 }
 .home-page .tree-definitions-lead{
@@ -210,7 +210,7 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
   line-height:1.4;
 }
 .home-page .tree-stage{
-  margin:-8px auto -4px;
+  margin:-18px auto -8px;
   width:100%;
   display:flex;
   align-items:center;
@@ -240,3 +240,5 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
   .home-page .tree-definition p{font-size:13px}
   .home-page .tree-definition-source{font-size:10px}
 }
+
+.home-page .tree-definition-disciplinary{margin-bottom:0}
