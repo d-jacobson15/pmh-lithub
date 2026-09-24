@@ -7,7 +7,20 @@
   const script = document.currentScript;
   const siteRoot = script && script.src ? script.src.replace(/search\.js(?:\?.*)?$/, '') : '../';
 
+  document.body.appendChild(panel);
+
   const normalise = value => (value || '').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+
+  function positionPanel(){
+    if (panel.hidden) return;
+    const rect = input.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const width = Math.min(430, Math.max(330, rect.width + 70), viewportWidth - 24);
+    const left = Math.max(12, Math.min(rect.right - width, viewportWidth - width - 12));
+    panel.style.width = width + 'px';
+    panel.style.left = left + 'px';
+    panel.style.top = (rect.bottom + 8) + 'px';
+  }
 
   function closeResults(){
     panel.hidden = true;
@@ -63,11 +76,16 @@
         panel.appendChild(button);
       });
     }
+
     panel.hidden = false;
     input.setAttribute('aria-expanded','true');
+    positionPanel();
   }
 
   input.addEventListener('input', event => render(event.target.value));
+  input.addEventListener('focus', () => {
+    if (input.value.trim()) render(input.value);
+  });
   input.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeResults();
     if (event.key === 'Enter'){
@@ -75,7 +93,11 @@
       if (first) first.click();
     }
   });
+
+  window.addEventListener('resize', positionPanel);
+  window.addEventListener('scroll', positionPanel, {passive:true});
+
   document.addEventListener('click', event => {
-    if (!event.target.closest('.site-search')) closeResults();
+    if (!event.target.closest('.site-search') && !panel.contains(event.target)) closeResults();
   });
 })();
