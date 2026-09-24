@@ -8,9 +8,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body class="home-page">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html" aria-label="Literacy Hub home">
+        <span class="brand-monogram">PMH</span>
+        <span class="brand-copy">
+          <span class="brand-kicker">Parramatta Marist High School</span>
+          <span class="brand-title">Literacy Hub</span>
+          <span class="brand-subtitle">Excellence · Growth · Innovation</span>
+        </span>
+      </a>
+      <div class="header-tools">
+        <div class="site-search">
+          <input class="site-search-input" type="search" placeholder="Search the Literacy Hub…" aria-label="Search the Literacy Hub" aria-expanded="false" autocomplete="off">
+          <span class="site-search-icon" aria-hidden="true">⌕</span>
+          <div class="site-search-results" hidden></div>
+        </div>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="#tree">Literacy Tree</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
   <main class="home-wrap">
     <h1>PMH LitHub</h1>
 
@@ -34,7 +58,7 @@
       </div>
     </section>
 
-    <section class="tree-shell" aria-label="PMH Literacy Tree">
+    <section class="tree-shell" id="tree" aria-label="PMH Literacy Tree">
       <div class="tree-headline disciplinary">Disciplinary Literacy</div>
 
       <div class="tree-stage">
@@ -177,5 +201,7 @@
       group.appendChild(g);
     });
   </script>
+  <script src="search-index.js?v=1"></script>
+  <script src="search.js?v=2" data-site-search></script>
 </body>
 </html>
