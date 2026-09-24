@@ -131,6 +131,10 @@
 
   renderPageTags();
 
+  document.querySelectorAll('.footer-year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+
   input.addEventListener('input', event => render(event.target.value));
   input.addEventListener('focus', () => {
     if (input.value.trim()) render(input.value);
