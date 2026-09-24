@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body class="home-page">
   <main class="home-wrap">
@@ -143,7 +143,7 @@
 
     literacyIssues.forEach(issue => {
       const g = document.createElementNS(NS, 'g');
-      g.setAttribute('class', `issue-node ${issue.type}`);
+      g.setAttribute('class', `issue-node ${issue.type} ${issue.slug === 'tier-2-3-vocabulary' ? 'current-priority' : 'inactive-priority'}`);
       g.setAttribute('tabindex', '0');
       g.setAttribute('role', 'link');
       g.setAttribute('aria-label', issue.title);
