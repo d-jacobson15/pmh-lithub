@@ -82,6 +82,55 @@
     positionPanel();
   }
 
+  function renderPageTags(){
+    const sidebar = document.querySelector('.issue-side');
+    if (!sidebar) return;
+
+    const currentPath = window.location.pathname.replace(/\/+$/, '');
+    const currentItem = index.find(item => {
+      const itemPath = new URL(item.url, siteRoot).pathname.replace(/\/+$/, '');
+      return itemPath === currentPath;
+    });
+
+    const existing = sidebar.querySelector('.tag-panel');
+    const existingDivider = existing && existing.previousElementSibling && existing.previousElementSibling.classList.contains('sidebar-divider')
+      ? existing.previousElementSibling
+      : null;
+
+    if (!currentItem || !currentItem.tags || !currentItem.tags.length){
+      if (existing) existing.remove();
+      if (existingDivider) existingDivider.remove();
+      return;
+    }
+
+    if (existing) existing.remove();
+    if (existingDivider) existingDivider.remove();
+
+    const divider = document.createElement('div');
+    divider.className = 'sidebar-divider';
+
+    const details = document.createElement('details');
+    details.className = 'tag-panel';
+
+    const summary = document.createElement('summary');
+    summary.innerHTML = 'Page Tags <span>Click to view</span>';
+
+    const list = document.createElement('div');
+    list.className = 'tag-list';
+
+    currentItem.tags.forEach(tag => {
+      const chip = document.createElement('span');
+      chip.className = 'tag-chip';
+      chip.textContent = tag;
+      list.appendChild(chip);
+    });
+
+    details.append(summary, list);
+    sidebar.append(divider, details);
+  }
+
+  renderPageTags();
+
   input.addEventListener('input', event => render(event.target.value));
   input.addEventListener('focus', () => {
     if (input.value.trim()) render(input.value);
