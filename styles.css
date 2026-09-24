@@ -141,3 +141,13 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 .tag-panel-top{margin:0;background:#f8f6ef;border-color:#d8dfda;box-shadow:0 4px 14px rgba(31,58,47,.035)}
 .tag-panel-top summary{padding:10px 14px}
 @media(max-width:900px){.page-meta-row{grid-template-columns:1fr;gap:10px}.tag-panel-top{width:100%}}
+
+.issue-node.inactive-priority circle{fill:#aab3af;stroke:#f8faf9}
+.issue-node.inactive-priority rect{fill:#eef0ef;stroke:#d4d9d6}
+.issue-node.inactive-priority text{fill:#74807b}
+.issue-node.inactive-priority:hover circle,.issue-node.inactive-priority:focus circle{fill:#8d9994;stroke:#fff}
+.issue-node.inactive-priority:hover rect,.issue-node.inactive-priority:focus rect{stroke:#aeb8b3;filter:drop-shadow(0 4px 8px rgba(0,0,0,.08))}
+.issue-node.inactive-priority:hover text,.issue-node.inactive-priority:focus text{fill:#56625d}
+.issue-node.current-priority circle{fill:var(--green-dark);stroke:#fff;stroke-width:3}
+.issue-node.current-priority rect{fill:#fffaf0;stroke:var(--gold);stroke-width:2;filter:drop-shadow(0 4px 8px rgba(201,155,44,.16))}
+.issue-node.current-priority text{fill:var(--green-dark);font-weight:700}
