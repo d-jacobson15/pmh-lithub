@@ -151,3 +151,92 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 .issue-node.current-priority circle{fill:var(--green-dark);stroke:#fff;stroke-width:3}
 .issue-node.current-priority rect{fill:#fffaf0;stroke:var(--gold);stroke-width:2;filter:drop-shadow(0 4px 8px rgba(201,155,44,.16))}
 .issue-node.current-priority text{fill:var(--green-dark);font-weight:700}
+
+.home-page .home-wrap{
+  display:block;
+  width:min(1440px,94vw);
+  margin:0 auto;
+  padding:30px 0 64px;
+}
+.home-page .home-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin:0 0 22px;
+}
+.home-page .intro-column{
+  min-height:100%;
+  padding:24px 28px 25px;
+}
+.home-page .tree-shell{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  padding:24px 28px 28px;
+  margin:0;
+}
+.home-page .tree-definitions-lead{
+  margin:2px auto 18px;
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,1.9vw,27px);
+  line-height:1.25;
+  font-weight:700;
+  color:var(--green-dark);
+}
+.home-page .tree-definition{
+  width:min(760px,92%);
+  margin:0 auto;
+  text-align:center;
+}
+.home-page .tree-definition .tree-headline{
+  display:inline-block;
+  max-width:none;
+  margin:0 auto 10px;
+  padding:10px 20px;
+  font-size:clamp(18px,1.7vw,23px);
+}
+.home-page .tree-definition p{
+  margin:0 auto 5px;
+  max-width:720px;
+  color:#4d655c;
+  font-size:14px;
+  line-height:1.55;
+}
+.home-page .tree-definition-source{
+  display:block;
+  color:#7a8882;
+  font-size:11px;
+  line-height:1.4;
+}
+.home-page .tree-stage{
+  margin:-8px auto -4px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.home-page .tree-svg{
+  width:min(100%,1200px);
+  max-width:1200px;
+  height:auto;
+}
+.home-page .tree-definition-foundational{
+  margin-top:-4px;
+}
+.home-page .tree-definition-foundational .tree-headline{
+  margin-bottom:10px;
+}
+@media(max-width:900px){
+  .home-page .home-intro{grid-template-columns:1fr}
+  .home-page .tree-shell{padding:20px 16px 24px}
+  .home-page .tree-definition{width:min(94%,720px)}
+  .home-page .tree-stage{margin:0 auto}
+}
+@media(max-width:620px){
+  .home-page .home-wrap{width:96vw;padding-top:18px}
+  .home-page .intro-column{padding:18px 20px}
+  .home-page .tree-definitions-lead{font-size:20px;margin-bottom:14px}
+  .home-page .tree-definition p{font-size:13px}
+  .home-page .tree-definition-source{font-size:10px}
+}
