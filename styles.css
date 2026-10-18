@@ -249,3 +249,8 @@ border-bottom:3px solid var(--gold);box-shadow:0 12px 34px rgba(7,55,45,.18);ove
 
 .site-footer{margin-top:8px;padding:22px 20px 26px;text-align:center;border-top:1px solid #d9e1dc;color:#71817a;background:rgba(255,255,255,.5)}
 .site-footer p{margin:0;font-size:12px;font-weight:600;letter-spacing:.03em}
+
+/* Whole-school strategy: distinct accent within the literacy priority sidebar */
+.sidebar-strategy-list .strategy-card.whole-school-strategy{border:2px solid #d8ad37;background:#fff9e9;box-shadow:0 10px 28px rgba(130,96,17,.09)}
+.sidebar-strategy-list .strategy-card.whole-school-strategy:hover{border-color:#a87914;background:#fff5d9}
+.whole-school-strategy .whole-school-label{display:block;margin-bottom:10px;color:#71520c;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
