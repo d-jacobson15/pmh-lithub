@@ -109,11 +109,13 @@
     const divider = document.createElement('div');
     divider.className = 'sidebar-divider';
 
-    const details = document.createElement('details');
+    const details = document.createElement('section');
     details.className = 'tag-panel';
+    details.setAttribute('aria-label', 'Page tags');
 
-    const summary = document.createElement('summary');
-    summary.innerHTML = 'Page Tags <span>Click to view</span>';
+    const summary = document.createElement('h2');
+    summary.className = 'tag-heading';
+    summary.textContent = 'Page Tags';
 
     const list = document.createElement('div');
     list.className = 'tag-list';
