@@ -11,11 +11,11 @@
     rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=26">
 <style>
-.vocabulary-examples{display:grid;gap:10px}
-.vocab-preview-button{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:13px 15px;text-align:center;font:inherit;font-weight:400;line-height:1.4;color:#333;background:#f1f1f1;border:1px solid #d6d6d6;border-radius:9px;cursor:pointer;transition:background .15s,border-color .15s}
-.vocab-preview-button:hover,.vocab-preview-button:focus-visible{background:#e5e5e5;border-color:#a9a9a9}
+.vocabulary-examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.vocab-preview-button{display:flex;align-items:center;justify-content:center;min-width:0;min-height:78px;width:100%;padding:12px 14px;text-align:center;font:inherit;font-size:14px;font-weight:500;line-height:1.3;overflow-wrap:anywhere;color:var(--green-dark);background:#fff;border:1px solid #dde4df;border-radius:14px;box-shadow:0 10px 28px rgba(31,58,47,.05);cursor:pointer;transition:transform .18s,border-color .18s}
+.vocab-preview-button:hover,.vocab-preview-button:focus-visible{transform:translateY(-3px);border-color:#9fbaa9}
 .vocab-preview-button:focus-visible,.vocab-dialog-close:focus-visible{outline:3px solid #f1c232;outline-offset:2px}
-.vocab-preview-button span{flex-shrink:0}
+@media(max-width:1080px){.vocabulary-examples{grid-template-columns:1fr}}
 .vocab-preview-dialog{width:min(1000px,94vw);max-width:94vw;max-height:92vh;padding:0;border:0;border-radius:14px;background:#fff;box-shadow:0 22px 70px #0005;overflow:auto}
 .vocab-preview-dialog::backdrop{background:rgba(16,31,22,.72)}
 .vocab-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 21px;border-bottom:1px solid #e1e9e2;position:sticky;top:0;background:white;z-index:1}
