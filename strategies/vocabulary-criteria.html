@@ -10,6 +10,23 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=26">
+<style>
+.vocab-ai-trigger{width:100%;text-align:left;font:inherit;font-weight:600;background:transparent;border:0;border-bottom:1px solid #dde4df;cursor:pointer}
+.vocab-ai-trigger:hover{color:#1e4931;text-decoration:underline}
+.vocab-ai-trigger:focus-visible,.vocab-ai-close:focus-visible,.vocab-copy:focus-visible{outline:3px solid #f1c232;outline-offset:2px}
+.vocab-ai-dialog{width:min(850px,94vw);max-width:94vw;max-height:90vh;border:0;border-radius:16px;padding:0;background:#fff;box-shadow:0 24px 90px #0005;overflow:auto;color:#26382f}
+.vocab-ai-dialog::backdrop{background:rgba(15,33,22,.7)}
+.vocab-ai-header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;border-bottom:1px solid #e1e7e2;position:sticky;top:0;background:#fff;z-index:1}
+.vocab-ai-header h2{margin:0;font-size:1.3rem;color:#285c3c}
+.vocab-ai-close{font:inherit;border:1px solid #dce4de;background:#f7f8f7;border-radius:8px;padding:8px 12px;cursor:pointer}
+.vocab-ai-content{padding:22px 24px 28px}.vocab-ai-content>p{margin-top:0;line-height:1.6}
+.vocab-prompt-card{border:1px solid #dce4de;border-radius:12px;padding:18px;margin-top:17px;background:#fbfcfb}
+.vocab-prompt-card h3{margin:0 0 8px;color:#285c3c;font-size:1.08rem}
+.vocab-prompt-card p{line-height:1.55}
+.vocab-prompt-text{white-space:pre-wrap;font:inherit;font-size:.92rem;line-height:1.6;background:#fff;border:1px solid #e0e5e0;border-radius:8px;padding:15px;margin:12px 0}
+.vocab-copy{border:1px solid #cbd8ce;border-radius:8px;background:#edf3ee;color:#285c3c;padding:9px 13px;font:inherit;font-weight:600;cursor:pointer}
+@media(max-width:600px){.vocab-ai-header,.vocab-ai-content{padding:14px}.vocab-ai-header h2{font-size:1.1rem}}
+</style>
 </head>
 <body>
 
@@ -180,14 +197,9 @@ from 0.52 to 1.22.
 
         <h2>Ready-to-Use Resources</h2>
         <div>
-        <a class="resource-link" href="#" onclick="return false">Faculty Tier 2 and 3 Word Banks ↗</a>
-        <a class="resource-link" href="#" onclick="return false">Extract Tier 2 &amp; 3 Words with AI ↗</a>
-        <a class="resource-link" href="#" onclick="return false">Canvas Pop-Up ↗</a>
-        <a class="resource-link"
-          href="https://cpl.nswtf.org.au/wp-content/uploads/sites/2/2022/05/Guide-for-selecting-vocabulary-for-explicit-instruction-1.pdf"
-          target="_blank" rel="noopener">
-          Guide for Selecting Vocabulary for Explicit Instruction ↗
-        </a>
+          <a class="resource-link" href="https://drive.google.com/drive/u/1/folders/11agq-WFLbbaTPGnVIs_8aACzNTxlf3LB" target="_blank" rel="noopener noreferrer">KLA Tiered Word Lists ↗</a>
+          <button type="button" class="resource-link vocab-ai-trigger" id="open-vocab-ai">Extract Tier 2 &amp; 3 Words with AI ↗</button>
+          <a class="resource-link" href="https://cpl.nswtf.org.au/wp-content/uploads/sites/2/2022/05/Guide-for-selecting-vocabulary-for-explicit-instruction-1.pdf" target="_blank" rel="noopener noreferrer">Guide for Selecting Vocabulary for Explicit Instruction ↗</a>
         </div>
 
         <h2>Further Reading</h2>
@@ -213,6 +225,52 @@ from 0.52 to 1.22.
   </footer>
 
 
+<dialog class="vocab-ai-dialog" id="vocab-ai-dialog" aria-labelledby="vocab-ai-title">
+  <div class="vocab-ai-header"><h2 id="vocab-ai-title">Extract Tier 2 &amp; 3 Words with AI</h2><button type="button" class="vocab-ai-close">Close ×</button></div>
+  <div class="vocab-ai-content">
+    <p>Choose the approach that suits your planning. Copy the relevant prompt into your preferred AI tool, replace the bracketed details and review its suggestions against your students' needs and the unit outcomes.</p>
+    <section class="vocab-prompt-card"><h3>Option 1: Extract words from a text or resource</h3><p>Use this when you have an article, extract, worksheet, textbook passage or other source material.</p>
+      <div class="vocab-prompt-text" id="vocab-prompt-source">I teach [year level and subject]. Our unit is [unit title]. Analyse the source material I provide below and identify 10 useful Tier 2 words (transferable academic vocabulary) and 10 Tier 3 words (specialist vocabulary specific to this subject or unit).
+
+Prioritise words that students need to understand the text, discuss its ideas and respond effectively to assessment tasks. Present your response as a two-column table headed “Tier 2 Vocabulary” and “Tier 3 Vocabulary”. For each word, provide a brief student-friendly definition and a sentence showing its use in this unit.
+
+Use only words that appear in or are directly supported by the source. If there are fewer than 10 suitable words in a tier, list fewer rather than inventing additional examples. Flag any words whose classification is context-dependent.
+
+SOURCE MATERIAL:
+[Paste the text or source material here]</div>
+      <button type="button" class="vocab-copy" data-copy-target="vocab-prompt-source">Copy prompt</button>
+    </section>
+    <section class="vocab-prompt-card"><h3>Option 2: Generate a word list from a topic or syllabus</h3><p>Use this when planning a new unit or identifying vocabulary from syllabus content points.</p>
+      <div class="vocab-prompt-text" id="vocab-prompt-syllabus">I teach [year level and subject]. Our topic/unit is [topic or unit name]. The relevant syllabus content points or learning outcomes are:
+
+[Paste syllabus points, outcomes or a brief topic description here]
+
+Recommend 10 Tier 2 words (transferable academic vocabulary used across subjects) and 10 Tier 3 words (specialist vocabulary needed to understand and communicate this topic).
+
+Prioritise words that will help students access the key concepts, read subject material and write or speak about the unit. Present the words in a two-column table headed “Tier 2 Vocabulary” and “Tier 3 Vocabulary”. Include a concise student-friendly definition and an example of each word in the unit's context.
+
+Base the selection on the syllabus points provided. Do not claim that a word is mandated by a syllabus unless it appears explicitly in the supplied text. Flag any uncertain classifications and suggest which words should be taught first, with a short reason.</div>
+      <button type="button" class="vocab-copy" data-copy-target="vocab-prompt-syllabus">Copy prompt</button>
+    </section>
+  </div>
+</dialog>
+<script>
+(() => {
+  const modal=document.getElementById('vocab-ai-dialog');
+  const trigger=document.getElementById('open-vocab-ai');
+  trigger.addEventListener('click',()=>modal.showModal());
+  modal.querySelector('.vocab-ai-close').addEventListener('click',()=>modal.close());
+  modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+  modal.addEventListener('close',()=>trigger.focus());
+  modal.querySelectorAll('[data-copy-target]').forEach(button=>{
+    button.addEventListener('click',async()=>{
+      const value=document.getElementById(button.dataset.copyTarget).textContent.trim();
+      try {await navigator.clipboard.writeText(value);button.textContent='Copied';}
+      catch(e){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(document.getElementById(button.dataset.copyTarget));selection.removeAllRanges();selection.addRange(range);button.textContent='Select and copy highlighted text';}
+    });
+  });
+})();
+</script>
   <script src="../search-index.js?v=2"></script>
   <script src="../search.js?v=4" data-site-search></script>
 </body>
