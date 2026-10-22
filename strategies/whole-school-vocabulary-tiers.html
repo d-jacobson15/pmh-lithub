@@ -10,6 +10,20 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=26">
+<style>
+.vocabulary-examples{display:grid;gap:10px}
+.vocab-preview-button{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:13px 15px;text-align:left;font:inherit;font-weight:600;line-height:1.4;color:#285c3c;background:#f5f8f5;border:1px solid #d5e2d7;border-radius:9px;cursor:pointer;transition:background .15s,border-color .15s}
+.vocab-preview-button:hover,.vocab-preview-button:focus-visible{background:#e8f2e9;border-color:#285c3c}
+.vocab-preview-button:focus-visible,.vocab-dialog-close:focus-visible{outline:3px solid #f1c232;outline-offset:2px}
+.vocab-preview-button span{flex-shrink:0}
+.vocab-preview-dialog{width:min(1000px,94vw);max-width:94vw;max-height:92vh;padding:0;border:0;border-radius:14px;background:#fff;box-shadow:0 22px 70px #0005;overflow:auto}
+.vocab-preview-dialog::backdrop{background:rgba(16,31,22,.72)}
+.vocab-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 21px;border-bottom:1px solid #e1e9e2;position:sticky;top:0;background:white;z-index:1}
+.vocab-dialog-header h2{font-size:1.12rem;margin:0;color:#285c3c}
+.vocab-dialog-close{background:#edf2ed;border:0;border-radius:7px;color:#285c3c;font:inherit;font-weight:700;padding:7px 12px;cursor:pointer}
+.vocab-preview-dialog img{display:block;width:auto;max-width:100%;height:auto;max-height:calc(92vh - 85px);margin:18px auto;object-fit:contain}
+@media(max-width:600px){.vocab-dialog-header{padding:12px}.vocab-dialog-header h2{font-size:1rem}.vocab-preview-dialog img{margin:8px auto}}
+</style>
 </head>
 <body>
 
@@ -54,7 +68,12 @@
 <div style="margin:0 0 18px"><strong style="color:#07372d">Revisit Tier 2 vocabulary</strong><p style="margin:5px 0 0;line-height:1.6;color:#52675f">Plan repeated encounters in different contexts, including reading, discussion, retrieval activities and writing. Students need opportunities to use words, not just recognise their definitions.</p></div>
 <div style="margin:0 0 18px"><strong style="color:#07372d">Build a comprehensive bank early</strong><p style="margin:5px 0 0;line-height:1.6;color:#52675f">Audit the unit thoroughly so the shared bank includes the vocabulary required for key content, questions and responses. Keep the bank open to purposeful refinement, rather than filling major gaps reactively later.</p></div>
 <div style="margin:0 0 18px"><strong style="color:#07372d">Distinguish Tier 2 from Tier 3</strong><p style="margin:5px 0 0;line-height:1.6;color:#52675f">Teach transferable Tier 2 terms across subjects while introducing specialist Tier 3 words alongside the concepts they describe. Some words change meaning across KLAs, so model their discipline-specific use.</p></div>
-</article><aside class="issue-side"><div class="sidebar-divider"></div><h2>Across the Curriculum</h2><div class="strategy-list across-curriculum-list sidebar-curriculum-list"><div class="strategy-card"><h3>English Word Lists</h3></div><div class="strategy-card"><h3>HSIE Word Lists</h3></div><div class="strategy-card"><h3>Mathematics Word Lists</h3></div><div class="strategy-card"><h3>Science Word Lists</h3></div><div class="strategy-card"><h3>Religious Education Word Lists</h3></div><div class="strategy-card"><h3>Technologies Word Lists</h3></div><div class="strategy-card"><h3>CAPA Word Lists</h3></div><div class="strategy-card"><h3>HMS Word Lists</h3></div></div>
+</article><aside class="issue-side"><div class="sidebar-divider"></div><h2>Across the Curriculum</h2><div class="strategy-list across-curriculum-list sidebar-curriculum-list vocabulary-examples">
+  <button class="vocab-preview-button" type="button" data-vocab-image="../images/List_ENG.png" data-vocab-title="Year 8 English Word List">Year 8 English Word List <span aria-hidden="true">↗</span></button>
+  <button class="vocab-preview-button" type="button" data-vocab-image="../images/List_COMM.png" data-vocab-title="Year 10 Commerce Word List">Year 10 Commerce Word List <span aria-hidden="true">↗</span></button>
+  <button class="vocab-preview-button" type="button" data-vocab-image="../images/List_MATH.png" data-vocab-title="Year 12 Mathematics Advanced Word List">Year 12 Mathematics Advanced Word List <span aria-hidden="true">↗</span></button>
+  <button class="vocab-preview-button" type="button" data-vocab-image="../images/List_ART.png" data-vocab-title="Year 12 Visual Arts Word List">Year 12 Visual Arts Word List <span aria-hidden="true">↗</span></button>
+</div>
 <div class="sidebar-divider"></div>
 <h2>Ready-to-Use Resources</h2>
 <a class="resource-link" href="https://drive.google.com/drive/u/1/folders/1bkolR38cwnUGDfbAw9riA2GlUDPpZWUD" target="_blank" rel="noopener noreferrer">Tiered Vocabulary Fileshare Folder ↗</a>
@@ -67,6 +86,30 @@
   </footer>
 
 
+<dialog class="vocab-preview-dialog" id="vocabulary-preview" aria-labelledby="vocab-dialog-title">
+  <div class="vocab-dialog-header"><h2 id="vocab-dialog-title">Word List Example</h2><button type="button" class="vocab-dialog-close" aria-label="Close word list preview">Close ×</button></div>
+  <img id="vocab-dialog-image" src="" alt="Completed tiered vocabulary word list example">
+</dialog>
+<script>
+(() => {
+  const dialog=document.getElementById('vocabulary-preview');
+  const image=document.getElementById('vocab-dialog-image');
+  const title=document.getElementById('vocab-dialog-title');
+  let opener=null;
+  document.querySelectorAll('[data-vocab-image]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      opener=button;
+      title.textContent=button.dataset.vocabTitle;
+      image.alt='Completed tiered vocabulary list for '+button.dataset.vocabTitle;
+      image.src=button.dataset.vocabImage;
+      dialog.showModal();
+    });
+  });
+  dialog.querySelector('.vocab-dialog-close').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+  dialog.addEventListener('close',()=>{if(opener)opener.focus()});
+})();
+</script>
   <script src="../search-index.js?v=2"></script>
   <script src="../search.js?v=4" data-site-search></script>
 </body>
