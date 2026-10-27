@@ -10,6 +10,17 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=26">
+  <style>
+    .set-example-trigger{width:100%;font:inherit;color:inherit;cursor:pointer;background:#fff}
+    .set-example-trigger:focus-visible{outline:3px solid #0f5b46;outline-offset:3px}
+    .set-example-dialog{border:0;border-radius:18px;padding:0;max-width:min(95vw,1100px);max-height:92vh;box-shadow:0 18px 65px rgba(0,0,0,.24)}
+    .set-example-dialog::backdrop{background:rgba(5,25,18,.72)}
+    .set-example-dialog-inner{padding:20px;max-height:92vh;overflow:auto}
+    .set-example-dialog-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+    .set-example-dialog-header h2{margin:0;color:#07372d}
+    .set-example-close{border:0;border-radius:50%;width:38px;height:38px;background:#edf2ef;color:#07372d;font-size:26px;cursor:pointer;flex-shrink:0}
+    .set-example-dialog img{max-width:100%;height:auto;display:block;margin:auto;border-radius:8px}
+  </style>
 </head>
 <body>
 
@@ -70,10 +81,10 @@
         <div class="sidebar-divider"></div>
         <h2>Across the Curriculum</h2>
         <div class="strategy-list across-curriculum-list sidebar-curriculum-list">
-          <div class="strategy-card"><h3>Year 9 History</h3><a href="../images/SET-HISTORY.png" target="_blank" rel="noopener noreferrer" aria-label="View Year 9 History set plays example"><img src="../images/SET-HISTORY.png" alt="Year 9 History set plays classroom example" loading="lazy" style="display:block;width:100%;height:auto;border-radius:10px;margin-top:10px"></a></div>
-          <div class="strategy-card"><h3>Year 12 Studies of Religion</h3><a href="../images/SET-SOR.png" target="_blank" rel="noopener noreferrer" aria-label="View Year 12 Studies of Religion set plays example"><img src="../images/SET-SOR.png" alt="Year 12 Studies of Religion set plays classroom example" loading="lazy" style="display:block;width:100%;height:auto;border-radius:10px;margin-top:10px"></a></div>
-          <div class="strategy-card"><h3>Year 12 Maths Standard</h3><a href="../images/SET-MATH.png" target="_blank" rel="noopener noreferrer" aria-label="View Year 12 Maths Standard set plays example"><img src="../images/SET-MATH.png" alt="Year 12 Maths Standard set plays classroom example" loading="lazy" style="display:block;width:100%;height:auto;border-radius:10px;margin-top:10px"></a></div>
-          <div class="strategy-card"><h3>Year 7 Catholic Studies</h3><a href="../images/SET-CST.png" target="_blank" rel="noopener noreferrer" aria-label="View Year 7 Catholic Studies set plays example"><img src="../images/SET-CST.png" alt="Year 7 Catholic Studies set plays classroom example" loading="lazy" style="display:block;width:100%;height:auto;border-radius:10px;margin-top:10px"></a></div>
+          <button type="button" class="strategy-card set-example-trigger" data-src="../images/SET-HISTORY.png" data-title="Year 9 History" aria-label="View Year 9 History example"><h3>Year 9 History</h3></button>
+          <button type="button" class="strategy-card set-example-trigger" data-src="../images/SET-SOR.png" data-title="Year 12 Studies of Religion" aria-label="View Year 12 Studies of Religion example"><h3>Year 12 Studies of Religion</h3></button>
+          <button type="button" class="strategy-card set-example-trigger" data-src="../images/SET-MATH.png" data-title="Year 12 Maths Standard" aria-label="View Year 12 Maths Standard example"><h3>Year 12 Maths Standard</h3></button>
+          <button type="button" class="strategy-card set-example-trigger" data-src="../images/SET-CST.png" data-title="Year 7 Catholic Studies" aria-label="View Year 7 Catholic Studies example"><h3>Year 7 Catholic Studies</h3></button>
         </div>
         <div class="sidebar-divider"></div>
         <h2>Ready-to-Use Resources</h2>
@@ -95,5 +106,28 @@
 
   <script src="../search-index.js?v=2"></script>
   <script src="../search.js?v=4" data-site-search></script>
+  <dialog class="set-example-dialog" id="setExampleDialog" aria-labelledby="setExampleTitle">
+    <div class="set-example-dialog-inner">
+      <div class="set-example-dialog-header"><h2 id="setExampleTitle"></h2><button class="set-example-close" type="button" aria-label="Close example">×</button></div>
+      <img id="setExampleImage" alt="">
+    </div>
+  </dialog>
+  <script>
+    (() => {
+      const dialog = document.getElementById('setExampleDialog');
+      const title = document.getElementById('setExampleTitle');
+      const img = document.getElementById('setExampleImage');
+      document.querySelectorAll('.set-example-trigger').forEach(button => {
+        button.addEventListener('click', () => {
+          title.textContent = button.dataset.title;
+          img.src = button.dataset.src;
+          img.alt = button.dataset.title + ' set plays example';
+          dialog.showModal();
+        });
+      });
+      dialog.querySelector('.set-example-close').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    })();
+  </script>
 </body>
 </html>
